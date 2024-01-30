@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs'); -%>
+<div id = "heading">
+    <h1> <%= listTitle %> </h1>
+</div>
+<div class="card">
+    <% for(let item of listItems) { %>
+    <div class="box">
+        <p id="title<%= item.id %>"> <%= item.title %> </p>
+        <form action="/edit" method="post">
+            <input type="hidden" name="listItemId" value="<%= item.id %>">
+            <input type="text" id="UpdatedItem<%= item.id %>" class="input" name="UpdatedListItem" value="<%=item.title%>" autocomplete autofocus="true" hidden="true">
+            <button id="done<%=item.id%>" class="done" type="submit" hidden><img src="/assets/icons/done.svg" alt="check"></button>
+        </form>
+        <button id="edit<%=item.id%>" class="edit" onclick="handler('<%= item.id %>')"><img src="/assets/icons/pencil.svg" alt="pencil"></button>
+        <form action="/delete" method="post">
+            <button id="delete<%=item.id%>" class="delete" onclick="this.form.submit()" name="deleteItemId" value="<%=item.id%>"><img src="/assets/icons/delete.svg" alt="delete"></button>
+        </form>
+    </div>
+    <% } %>
+    <form action="/add" method="post">
+        <input type="text" class="new-item" name="newtitle" placeholder="New Item" autocomplete="off" autofocus="true">
+        <button class="btn" type="submit" name="itemtitle">+</button>
+    </form>
+</div>
+<script>
+    function handler(id){
+        document.getElementById("title" + id).setAttribute("hidden", true);
+        document.getElementById("edit" + id).setAttribute("hidden", true);
+        document.getElementById("UpdatedItem" + id).removeAttribute("hidden");
+        document.getElementById("done" + id).removeAttribute("hidden");
+    }
+</script>
+<%- include('partials/footer.ejs'); -%>

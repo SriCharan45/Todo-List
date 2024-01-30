@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #000, #fff);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+main{
+    text-align: center;
+}
+
+#heading{
+    font-family: Helvetica, sans-serif;
+    color: #000;
+    font-size: 1rem;
+    margin: 50px auto;
+}
+
+.card{
+    height: auto;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content:first baseline;
+    margin-left: 33px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    font-size: 20px;
+    margin: 13px 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.edit, .done, .delete{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.done{
+    padding-top: 16px;
+}
+.delete{
+    padding-top: 16px;
+}
+
+.delete:hover svg {
+    fill: #ff0000a6 !important;
+}
+
+.new-item{
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #000;
+    margin-right: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+}
+
+.btn{
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+
+footer{
+    font-size: 15px;
+    bottom: 0;
+    padding: 5px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+   
